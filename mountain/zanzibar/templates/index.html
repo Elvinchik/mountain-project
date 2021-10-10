@@ -1,0 +1,70 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/megacss2.css' %}">
+   <title>Zanzibar</title>
+</head>
+
+{% block content %}
+<body>
+   <div class="first__place">
+      <div class="nav">
+         <header>
+            <a href="/main" class="Link Main">Main page</a>
+            <a href="/main/maldivies" class="Link Zanz">Maldivies</a>
+            <a href="/main/philippines" class="Link Phil">Philippines</a>
+            <a href="/main/bali" class="Link Bali">Bali</a>
+            <a href="/main/borabora" class="Link Bora">Bora-Bora</a>
+            <a href="/main/tasmania" class="Link Tas">Tasmania</a>
+         </header>
+      </div>
+
+      <div class="container">
+         <div class="left">
+            <img src="{% static 'images/Zanzibar.jpg' %}" class="image">
+         </div>
+         <div class="right">
+            <h1>Zanzibar</h1>
+            <p class="information">Zanzibar is an insular autonomous region of Tanzania. It is composed of the Zanzibar Archipelago in the
+               Indian Ocean, 25–50 kilometres (16–31 mi) off the coast of the mainland, and consists of many small
+               islands and two large ones: Unguja (the main island, referred to informally as Zanzibar) and Pemba
+               Island. The capital is Zanzibar City, located on the island of Unguja. Its historic centre is Stone Town,
+               a World Heritage Site.
+
+               Zanzibar's main industries are spices, raffia, and tourism. In particular, the islands produce cloves,
+               nutmeg, cinnamon, and black pepper. For this reason, the Zanzibar Archipelago, together with Tanzania's
+               Mafia Island, are sometimes referred to locally as the "Spice Islands". Tourism in Zanzibar is a more
+               recent activity, driven by government promotion that caused an increase from 19,000 tourists in 1985, to
+               376,000 in 2016. The islands are accessible via 5 ports and the Abeid Amani Karume International Airport,
+               which can serve up to 1.5 million passengers per year.</p>
+            <button class="buy">Buy</button>
+         </div>
+      </div>
+      <form method="POST" action="." class="form">
+         {% csrf_token %}
+
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         {% render_field form.body class="text" %}
+         <a href="#"><input type="submit" class="send" value="Send"></a>
+      </form>
+      {% for comment in comments %}
+      <div class="comment">
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         <div class="info">
+            <p class="user-nickname">{{ comment.name | safe }}</p>
+            <p class="user-text">{{ comment.body | safe }}</p>
+            <p class="published">{{ comment.published|date:"d M h:i" | safe }}</p>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+{% endblock %}
+</body>
+
+</html>

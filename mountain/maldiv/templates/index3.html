@@ -1,0 +1,74 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/maldivcss.css' %}">
+   <title>Maldivies</title>
+</head>
+
+{% block content %}
+<body>
+   <div class="first__place">
+      <div class="nav">
+         <header>
+            <a href="/main" class="Link Main">Main page</a>
+            <a href="/main/zanzibar" class="Link Zanz">Zanzibar</a>
+            <a href="/main/philippines" class="Link Phil">Philippines</a>
+            <a href="/main/bali" class="Link Bali">Bali</a>
+            <a href="/main/borabora" class="Link Bora">Bora-Bora</a>
+            <a href="/main/tasmania" class="Link Tas">Tasmania</a>
+         </header>
+      </div>
+
+      <div class="container">
+         <div class="left">
+            <img src="{% static 'images/mal.jpg' %}" class="image">
+         </div>
+         <div class="right">
+            <h1>Maldivies</h1>
+            <p class="information">Maldives, officially the Republic of Maldives, is an archipelagic state in the Indian subcontinent of
+               Asia,
+               situated in the Indian Ocean. It lies southwest of Sri Lanka and India, about 750 kilometres (470 miles;
+               400
+               nautical miles) from the Asian continent's mainland. The chain of 26 atolls stretches from
+               Ihavandhippolhu
+               Atoll in the north to Addu Atoll in the south (across the Equator). Comprising a territory spanning
+               roughly
+               90,000 square kilometres (35,000 sq mi) including the sea, land area of all the islands comprises 298
+               square
+               kilometres (115 sq mi), Maldives is one of the world's most geographically dispersed sovereign states as
+               well as the smallest Asian country by land area and, with around 557,426 inhabitants, the 2nd least
+               populous
+               country in Asia. Malé is the capital and the most populated city, traditionally called the "King's
+               Island"
+               where the ancient royal dynasties ruled for its central location.</p>
+            <button class="buy">Buy</button>
+         </div>
+      </div>
+      <form method="POST" action="." class="form">
+         {% csrf_token %}
+
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         {% render_field form.body class="text" %}
+         <input type="submit" class="send" value="Send">
+      </form>
+      {% for comment in comments %}
+      <div class="comment">
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         <div class="info">
+            <p class="user-nickname">{{ comment.name | safe }}</p>
+            <p class="user-text">{{ comment.body | safe }}</p>
+            <p class="published">{{ comment.published|date:"d M h:i" | safe }}</p>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+   <link rel="shortcut icon" href="{% static 'img/glavicon.jpg' %}">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/5f1646e689.js" crossorigin="anonymous"></script>
+   <title>Mountain</title>
+</head>
+
+<body>
+
+   <div class="full-screen" id="1st-page">
+      <div class="full-screen__info" id="header">
+         <p class="full-screen_title">Mountain</p>
+         <div class="burger__glav">
+            <div class="burger">
+               <span></span>
+            </div>
+            <div class="burger__back">
+               <nav id="nav">
+                  <a href="#" class="nav first" data-goto=".full-screen"> Main </a>
+                  <a href="#" class="nav second" data-goto=".info"> Info </a>
+                  <a href="#" class="nav third" data-goto=".footer_in"> Contact </a>
+                  <a href="#" class="nav icon" data-goto=".shop"><svg aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="shopping-cart" class="svg-inline--fa fa-shopping-cart fa-w-18"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor"
+                           d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z">
+                        </path>
+                     </svg></a>
+               </nav>
+            </div>
+         </div>
+      </div>
+      <div class="glav">
+         <h1 class="glav_h1"> Welcome to Mountain </h1>
+         <hr>
+      </div>
+   </div>
+   <video preload="auto" autoplay muted loop class="full-screen__video">
+      <source src="{% static 'videos/gotoday.mp4' %}" type="video/webm">
+      <source src="{% static 'videos/backgroundmenu.mp4' %}" type="video/mp4">
+   </video>
+
+
+   <div class="content">
+      <div class="info" id="info">
+         <div class="title-block">
+            <h3 class="suptitle"> about us </h3>
+            <h2 class="title"> Information </h2>
+            <hr>
+            <p class="text-info"> We are delighted to welcome you to the world's leading travel company. Our company has
+               been operating since 2006 and every time we improve our quality and services. To buy tickets or our
+               products, click on the icon on the top right. </p>
+         </div>
+         <div class="infoblockglav">
+            <div class="info_block">
+               <div class="info_block-item1">
+                  <i class="fas fa-search"></i>
+                  <h1 class="title_forinfo"> Search </h1>
+                  <p class="forinfo"> Convenient search to find the information that you need. Very easy to search for
+                     information. </p>
+               </div>
+               <div class="info_block-item2">
+                  <i class="fas fa-info"></i>
+                  <h1 class="title_forinfo"> Information </h1>
+                  <p class="forinfo"> Easy information to process. Everything is written in English so that you can
+                     easily
+                     translate. </p>
+               </div>
+               <div class="info_block-item4">
+                  <i class="fas fa-object-group"></i>
+                  <h1 class="title_forinfo"> Design </h1>
+                  <p class="forinfo"> Beautiful and user-friendly design. It is very pleasant to leaf through the site.
+                     Our best work!</p>
+               </div>
+               <div class="info_block-item3">
+                  <i class="fas fa-shopping-basket"></i>
+                  <h1 class="title_forinfo"> Shop </h1>
+                  <p class="forinfo"> Shop for purchasing tickets and fast payment via the Internet. You can also buy
+                     our
+                     merchandise. </p>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+
+      <div class="shop" id="Shop">
+         <div class="title-block">
+            <h3 class="suptitle"> our shop </h3>
+            <h2 class="title"> Online Store </h2>
+            <hr>
+
+            <div class="slider">
+
+               <div class="shop_item">
+                  <h1>Maldives</h1>
+                  <img src="{% static 'slider/5.jpg' %}" alt="">
+                  <p>Maldives, officially the Republic of Maldives, is an archipelagic state in the Indian subcontinent
+                     of Asia, situated in the Indian Ocean.</p>
+                  <a href="/main/maldivies/"><button class="buy bu1">Buy</button></a>
+               </div>
+
+               <div class="shop_item">
+                  <h1>Zanzibar</h1>
+                  <img src="{% static 'slider/6.jpg' %}" alt="">
+                  <p>Zanzibar is an insular autonomous region of Tanzania. It is composed of the Zanzibar Archipelago in
+                     the Indian Ocean. The capital is Zanzibar City.</p>
+                  <a href="/main/zanzibar"><button class="buy bu2">Buy</button></a>
+               </div>
+
+               <div class="shop_item">
+                  <h1>Philippines</h1>
+                  <img src="{% static 'slider/2.jpg' %}" alt="">
+                  <p>Philippines, island country of Southeast Asia. It is an archipelago consisting of more than 7,000
+                     islands lying about 500 miles (800 km).
+                  </p>
+                  <a href="/main/philippines"><button class="buy bu3">Buy</button></a>
+               </div>
+
+               <div class="shop_item">
+                  <h1>Bali</h1>
+                  <img src="{% static 'slider/1.jpg' %}" alt="">
+                  <p>Bali is a province of Indonesia. The provincial capital, Denpasar, is the most populous city.The
+                     province is
+                     Indonesia's main tourist destination.</p>
+                  <a href="/main/bali"><button class="buy bu4">Buy</button></a>
+               </div>
+
+               <div class="shop_item">
+                  <h1>Bora-Bora</h1>
+                  <img src="{% static 'slider/3.jpg' %}" alt="">
+                  <p>Bora Bora is an island group in the Leeward Islands. Bora Bora has a total land area of 30 km2.The
+                     Bora Bora is a major international tourist destination.</p>
+                  <a href="/main/borabora"><button class="buy bu5">Buy</button></a>
+               </div>
+
+               <div class="shop_item">
+                  <h1>Tasmania</h1>
+                  <img src="{% static 'slider/4.jpg' %}" alt="">
+                  <p>Tasmania is an island state of Australia, the 26th-largest island in the world.It is Australia's
+                     least populated state, with 541,000 residents.
+                  </p>
+                  <a href="/main/tasmania"><button class="buy bu6">Buy</button></a>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
+      <footer class="footer" id="Contact">
+
+         <div class="container">
+
+            <div class="footer_in">
+
+               <div class="title-block">
+                  <h3 class="suptitle"> email address </h3>
+                  <h2 class="title"> To contact us </h2>
+                  <hr>
+                  <p class="text-info"> Our site has been open for 5 years. Our clients are satisfied with the work we
+                     do every day. We hope you enjoyed it, too. To contact us, write your email address at the bottom in
+                     the window. </p>
+               </div>
+               <form method="POST" action="#" class="subscribe">
+                  <input class="subscribe_in" type="email" name="address" placeholder="Your Email...">
+                  <input class="sub_but" type="submit" name="Subscribe" value="Subscribe">
+               </form>
+
+               <div class="fs_c">
+                  Follow us:
+                  <a href="https://www.instagram.com/" target="_blank"> <i class="fab fa-instagram"> </i> </a>
+                  <a href="https://www.facebook.com/" target="_blank"> <i class="fab fa-facebook-f"> </i> </a>
+                  <a href="https://twitter.com/" target="_blank"> <i class="fab fa-twitter"> </i> </a>
+                  <a href="https://www.youtube.com/" target="_blank"> <i class="fab fa-youtube"> </i> </a>
+                  <a href="https://www.twitch.tv/" target="_blank"> <i class="fab fa-twitch"></i> </a>
+
+               </div>
+
+            </div>
+
+         </div>
+
+      </footer>
+
+      <div class="copyright">
+         © 2016 Mountain's day of creation.
+      </div>
+
+   </div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <script src="{% static 'js/script.js' %}"></script>
+
+   <script src="{% static 'js/slick.min.js' %}"></script>
+
+   <script src="{% static 'js/burger.js' %}"></script>
+
+
+</body>
+
+</html>

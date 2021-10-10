@@ -1,0 +1,68 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/balicss.css' %}">
+   <title>Bali</title>
+</head>
+
+{% block content %}
+<body>
+   <div class="first__place">
+      <div class="nav">
+         <header>
+            <a href="/main" class="Link Main">Main page</a>
+            <a href="/main/maldivies" class="Link Zanz">Maldivies</a>
+            <a href="/main/zanzibar" class="Link Zanz">Zanzibar</a>
+            <a href="/main/philippines" class="Link Phil">Philippines</a>
+            <a href="/main/borabora" class="Link Bora">Bora-Bora</a>
+            <a href="/main/tasmania" class="Link Tas">Tasmania</a>
+         </header>
+      </div>
+
+      <div class="container">
+         <div class="left">
+            <img src="{% static 'images/Bali.jpg' %}" class="image">
+         </div>
+         <div class="right">
+            <h1>Bali</h1>
+            <p class="information">Bali is a province of Indonesia and the westernmost of the Lesser Sunda Islands. East of Java and west of
+               Lombok, the province includes the island of Bali and a few smaller neighbouring islands, notably Nusa
+               Penida, Nusa Lembongan, and Nusa Ceningan. The provincial capital, Denpasar, is the most populous city in
+               the Lesser Sunda Islands and the second-largest, after Makassar, in Eastern Indonesia. The upland town of
+               Ubud is considered Bali's cultural centre. The province is Indonesia's main tourist destination, with a
+               significant rise in tourism since the 1980s. Tourism-related business makes up 80% of its economy.
+               Bali is the only Hindu-majority province in Muslim-majority Indonesia, with 86.9% of the population
+               adhering to Balinese Hinduism. It is renowned for its highly developed arts, including traditional and
+               modern dance, sculpture, painting, leather, metalworking, and music. The Indonesian International Film
+               Festival is held every year in Bali.</p>
+            <button class="buy">Buy</button>
+         </div>
+      </div>
+      <form method="POST" action="." class="form">
+         {% csrf_token %}
+
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         {% render_field form.body class="text" %}
+         <a href="#"><input type="submit" class="send" value="Send"></a>
+      </form>
+      {% for comment in comments %}
+      <div class="comment">
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         <div class="info">
+            <p class="user-nickname">{{ comment.name | safe }}</p>
+            <p class="user-text">{{ comment.body | safe }}</p>
+            <p class="published">{{ comment.published|date:"d M h:i" | safe }}</p>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+{% endblock %}
+</body>
+
+</html>

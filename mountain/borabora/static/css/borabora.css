@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*
+{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+}
+
+h1
+{
+   margin-bottom: 50px;
+   text-align: center;
+   font-size: 35px;
+}
+
+.information
+{
+   margin-bottom: 45px;
+   font-size: 20px;
+}
+
+.buy
+{
+   padding: 15px 220px;
+   border-radius: 15px;
+   outline: none;
+   border: none;
+   margin-left: 20.5%;
+   font-size: 20px;
+   transition: 0.3s linear all;
+   cursor: pointer;
+}
+
+button:hover
+{
+   background-color: rgb(243, 173, 42);
+}
+
+.first__place
+{
+   background-color: #464f7a;
+   height: 100%;
+   margin: 0 auto;
+}
+
+.container
+{
+   display: flex;
+   color: white;
+   margin-top: 60px;
+}
+
+.left
+{
+   margin: 0px 80px 0px 80px;
+}
+
+.right
+{
+   width: 800px;
+}
+
+.image
+{
+   width: 800px;
+   border-radius: 20px;
+   transition: 0.3s ease all;
+   height: 500px;
+}
+
+.image:hover
+{
+   transform: scale(1.1);
+}
+
+a
+{
+   text-decoration: none;
+   color: white;
+   padding: 0px 130px;
+   transition: 0.2s linear all;
+   font-size: 17px;
+}
+
+.Main
+{
+   padding-left: 0px;
+}
+
+.Tas
+{
+   padding-right: 0px;
+}
+
+a:hover
+{
+   color: orange;
+}
+
+header
+{
+   background-color: rgb(14, 132, 201);
+   padding: 12px 0px;
+   text-align: center;
+}
+
+.form {
+   margin-top: 110px;
+   margin-left: 90px;
+}
+
+.user-image {
+   width: 55px;
+   height: 55px;
+   vertical-align: top;
+}
+
+.text {
+   width: 1600px;
+   height: 120px;
+   font-size: 22px;
+   margin-left: 15px;
+   resize: none;
+   outline: none;
+   margin-bottom: 10px;
+   padding: 5px 0px 0px 10px;
+}
+
+.send {
+   display: block;
+   background-color: white;
+   cursor: pointer;
+   font-size: 20px;
+   border-radius: 15px;
+   outline: none;
+   border: none;
+   width: 250px;
+   height: 50px;
+   margin-left: 1423px;
+   text-align: center;
+   transition: 0.3s linear all;
+}
+
+.send:hover {
+   background-color: rgb(243, 173, 42);
+}
+
+.comment {
+   margin: 0px 0px 0px 90px;
+   padding-bottom: 40px;
+   display: flex;
+}
+
+.user-nickname {
+   color: orange;
+   margin-bottom: 0px;
+   font-size: 22px;
+   vertical-align:top;
+}
+
+.user-text {
+   color: white;
+   font-size: 20px;
+   margin-bottom: 3px;
+}
+
+.info
+{
+   display: flex;
+   flex-direction: column;
+   margin-left: 15px;
+}
+
+.published {
+   color: rgb(179, 174, 174);
+   font-size: 18px;
+}

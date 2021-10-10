@@ -1,0 +1,70 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/tasmania.css' %}">
+   <title>Tasmania</title>
+</head>
+
+{% block content %}
+<body>
+   <div class="first__place">
+      <div class="nav">
+         <header>
+            <a href="/main" class="Link Main">Main page</a>
+            <a href="/main/maldivies" class="Link Zanz">Maldivies</a>
+            <a href="/main/zanzibar" class="Link Phil">Zanzibar</a>
+            <a href="/main/philippines" class="Link Bali">Philippines</a>
+            <a href="/main/bali" class="Link Bali">Bali</a>
+            <a href="/main/borabora" class="Link Bora">Bora-Bora</a>
+         </header>
+      </div>
+
+      <div class="container">
+         <div class="left">
+            <img src="{% static 'images/Tas.jpg' %}" class="image">
+         </div>
+         <div class="right">
+            <h1>Tasmania</h1>
+            <p class="information">Tasmania, abbreviated as TAS, is an island state of Australia. It is located 240 km to the south
+               of the Australian mainland, separated from it by Bass Strait. The state encompasses the main island of
+               Tasmania, the 26th-largest island in the world, and the surrounding 1000 islands.The state capital and
+               largest city is Hobart,
+               with around 40 percent of the population living in the Greater Hobart area.
+               It is thought that Aboriginal Tasmanians became separated from the mainland Aboriginal groups about
+               11,700 years ago, after rising sea levels formed Bass Strait. The island was permanently settled by
+               Europeans in 1803 as a penal settlement of the British Empire to prevent claims to the land by the First
+               French Empire during the Napoleonic Wars. The Aboriginal population is estimated to have been between
+               3,000 and 7,000 at the time of British settlement, but was almost wiped out within 30 years during a
+               period of conflicts with settlers known as the "Black War" and the spread of infectious diseases to which
+               they had no immunity.</p>
+            <button class="buy">Buy</button>
+         </div>
+      </div>
+      <form method="POST" action="." class="form">
+         {% csrf_token %}
+
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         {% render_field form.body class="text" %}
+         <a href="#"><input type="submit" class="send" value="Send"></a>
+      </form>
+      {% for comment in comments %}
+      <div class="comment">
+         <img src="{% static 'images/user.png' %}" alt="" class="user-image">
+         <div class="info">
+            <p class="user-nickname">{{ comment.name | safe }}</p>
+            <p class="user-text">{{ comment.body | safe }}</p>
+            <p class="published">{{ comment.published|date:"d M h:i" | safe }}</p>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+{% endblock %}
+</body>
+
+</html>
